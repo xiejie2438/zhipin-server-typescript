@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../core/resource';
-import * as SchedulesAPI from './schedules';
 import * as AssistantSettingsAPI from '../seeker/preferences/assistant-settings';
 import * as WorkExperienceAPI from '../seeker/profile/work-experience';
 import * as MessagesAPI from '../seeker/message/conversations/messages';
@@ -152,6 +151,38 @@ export class Schedules extends APIResource {
 }
 
 /**
+ * 反馈信息
+ */
+export interface FeedbackInfo {
+  id?: string;
+
+  content?: string;
+
+  createdAt?: string;
+
+  result?: string;
+
+  userId?: string;
+
+  userName?: string;
+}
+
+/**
+ * 面试官信息
+ */
+export interface InterviewerInfo {
+  id?: string;
+
+  avatar?: string;
+
+  hasFeedback?: boolean;
+
+  isMain?: boolean;
+
+  name?: string;
+}
+
+/**
  * 职位信息
  */
 export interface PositionInfo {
@@ -251,143 +282,12 @@ export interface ResultScheduleDetail {
   /**
    * 日程详情响应
    */
-  data?: ResultScheduleDetail.Data;
+  data?: ScheduleDetailResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultScheduleDetail {
-  /**
-   * 日程详情响应
-   */
-  export interface Data {
-    /**
-     * 日程 ID
-     */
-    id?: string;
-
-    /**
-     * 创建时间
-     */
-    createdAt?: string;
-
-    /**
-     * 用户信息
-     */
-    createdBy?: SchedulesAPI.UserInfo;
-
-    /**
-     * 面试须知
-     */
-    description?: string;
-
-    /**
-     * 结束时间
-     */
-    endTime?: string;
-
-    /**
-     * 反馈列表
-     */
-    feedbacks?: Array<Data.Feedback>;
-
-    /**
-     * 面试官列表
-     */
-    interviewers?: Array<Data.Interviewer>;
-
-    /**
-     * 面试地点
-     */
-    location?: string;
-
-    /**
-     * 线上会议链接
-     */
-    meetingLink?: string;
-
-    /**
-     * 会议室
-     */
-    meetingRoom?: string;
-
-    /**
-     * 职位信息
-     */
-    position?: SchedulesAPI.PositionInfo;
-
-    /**
-     * 简历 ID
-     */
-    resumeId?: string;
-
-    /**
-     * 面试轮次
-     */
-    round?: string;
-
-    /**
-     * 开始时间
-     */
-    startTime?: string;
-
-    /**
-     * 状态
-     */
-    status?: string;
-
-    /**
-     * 人才信息
-     */
-    talent?: SchedulesAPI.TalentInfo;
-
-    /**
-     * 标题
-     */
-    title?: string;
-
-    /**
-     * 类型
-     */
-    type?: string;
-  }
-
-  export namespace Data {
-    /**
-     * 反馈信息
-     */
-    export interface Feedback {
-      id?: string;
-
-      content?: string;
-
-      createdAt?: string;
-
-      result?: string;
-
-      userId?: string;
-
-      userName?: string;
-    }
-
-    /**
-     * 面试官信息
-     */
-    export interface Interviewer {
-      id?: string;
-
-      avatar?: string;
-
-      hasFeedback?: boolean;
-
-      isMain?: boolean;
-
-      name?: string;
-    }
-  }
 }
 
 /**
@@ -398,6 +298,101 @@ export interface ScheduleCancel {
    * 取消原因
    */
   reason: string;
+}
+
+/**
+ * 日程详情响应
+ */
+export interface ScheduleDetailResponse {
+  /**
+   * 日程 ID
+   */
+  id?: string;
+
+  /**
+   * 创建时间
+   */
+  createdAt?: string;
+
+  /**
+   * 用户信息
+   */
+  createdBy?: UserInfo;
+
+  /**
+   * 面试须知
+   */
+  description?: string;
+
+  /**
+   * 结束时间
+   */
+  endTime?: string;
+
+  /**
+   * 反馈列表
+   */
+  feedbacks?: Array<FeedbackInfo>;
+
+  /**
+   * 面试官列表
+   */
+  interviewers?: Array<InterviewerInfo>;
+
+  /**
+   * 面试地点
+   */
+  location?: string;
+
+  /**
+   * 线上会议链接
+   */
+  meetingLink?: string;
+
+  /**
+   * 会议室
+   */
+  meetingRoom?: string;
+
+  /**
+   * 职位信息
+   */
+  position?: PositionInfo;
+
+  /**
+   * 简历 ID
+   */
+  resumeId?: string;
+
+  /**
+   * 面试轮次
+   */
+  round?: string;
+
+  /**
+   * 开始时间
+   */
+  startTime?: string;
+
+  /**
+   * 状态
+   */
+  status?: string;
+
+  /**
+   * 人才信息
+   */
+  talent?: TalentInfo;
+
+  /**
+   * 标题
+   */
+  title?: string;
+
+  /**
+   * 类型
+   */
+  type?: string;
 }
 
 /**
@@ -591,10 +586,13 @@ export interface ScheduleSubmitFeedbackParams {
 
 export declare namespace Schedules {
   export {
+    type FeedbackInfo as FeedbackInfo,
+    type InterviewerInfo as InterviewerInfo,
     type PositionInfo as PositionInfo,
     type ResultPageScheduleList as ResultPageScheduleList,
     type ResultScheduleDetail as ResultScheduleDetail,
     type ScheduleCancel as ScheduleCancel,
+    type ScheduleDetailResponse as ScheduleDetailResponse,
     type TalentInfo as TalentInfo,
     type UserInfo as UserInfo,
     type ScheduleCreateParams as ScheduleCreateParams,

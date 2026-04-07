@@ -14,7 +14,7 @@ import {
   TimelineItem,
 } from './applications';
 import * as FilesAPI from './files';
-import { FileFileParams, FileImageParams, Files, ResultUpload } from './files';
+import { FileFileParams, FileImageParams, Files, ResultUpload, UploadResponse } from './files';
 import * as JobsAPI from './jobs';
 import {
   CompanyInfo,
@@ -32,6 +32,7 @@ import {
 import * as NotificationsAPI from './notifications';
 import {
   NotificationListParams,
+  NotificationStatsResponse,
   Notifications,
   ResultNotificationStats,
   ResultPageResultNotification,
@@ -100,6 +101,7 @@ export declare namespace Seeker {
 
   export {
     Notifications as Notifications,
+    type NotificationStatsResponse as NotificationStatsResponse,
     type ResultNotificationStats as ResultNotificationStats,
     type ResultPageResultNotification as ResultPageResultNotification,
     type NotificationListParams as NotificationListParams,
@@ -108,6 +110,7 @@ export declare namespace Seeker {
   export {
     Files as Files,
     type ResultUpload as ResultUpload,
+    type UploadResponse as UploadResponse,
     type FileFileParams as FileFileParams,
     type FileImageParams as FileImageParams,
   };

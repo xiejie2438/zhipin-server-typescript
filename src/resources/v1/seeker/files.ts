@@ -48,7 +48,7 @@ export interface ResultUpload {
   /**
    * 上传响应
    */
-  data?: ResultUpload.Data;
+  data?: UploadResponse;
 
   /**
    * 响应消息
@@ -56,41 +56,39 @@ export interface ResultUpload {
   message?: string;
 }
 
-export namespace ResultUpload {
+/**
+ * 上传响应
+ */
+export interface UploadResponse {
   /**
-   * 上传响应
+   * 文件 Key
    */
-  export interface Data {
-    /**
-     * 文件 Key
-     */
-    fileKey?: string;
+  fileKey?: string;
 
-    /**
-     * 文件名
-     */
-    filename?: string;
+  /**
+   * 文件名
+   */
+  filename?: string;
 
-    /**
-     * MIME 类型
-     */
-    mimeType?: string;
+  /**
+   * MIME 类型
+   */
+  mimeType?: string;
 
-    /**
-     * 文件大小(字节)
-     */
-    size?: number;
+  /**
+   * 文件大小(字节)
+   */
+  size?: number;
 
-    /**
-     * 存储提供方: local/oss
-     */
-    storageProvider?: string;
+  /**
+   * 存储提供方: local/oss
+   */
+  storageProvider?: string;
 
-    /**
-     * 文件 URL
-     */
-    url?: string;
-  }
+  /**
+   * 文件 URL
+   */
+  url?: string;
 }
 
 export interface FileFileParams {
@@ -115,6 +113,7 @@ export interface FileImageParams {
 export declare namespace Files {
   export {
     type ResultUpload as ResultUpload,
+    type UploadResponse as UploadResponse,
     type FileFileParams as FileFileParams,
     type FileImageParams as FileImageParams,
   };

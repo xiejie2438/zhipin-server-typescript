@@ -24,6 +24,51 @@ export class Locations extends APIResource {
 }
 
 /**
+ * 地址响应
+ */
+export interface LocationResponse {
+  /**
+   * 地点 ID
+   */
+  id?: string;
+
+  /**
+   * 完整地址
+   */
+  address?: string;
+
+  /**
+   * 城市
+   */
+  city?: string;
+
+  /**
+   * 距离(米)
+   */
+  distance?: number;
+
+  /**
+   * 区县
+   */
+  district?: string;
+
+  /**
+   * 纬度
+   */
+  latitude?: number;
+
+  /**
+   * 经度
+   */
+  longitude?: number;
+
+  /**
+   * 地点名称
+   */
+  name?: string;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultListLocations {
@@ -35,59 +80,12 @@ export interface ResultListLocations {
   /**
    * 响应数据
    */
-  data?: Array<ResultListLocations.Data>;
+  data?: Array<LocationResponse>;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultListLocations {
-  /**
-   * 地址响应
-   */
-  export interface Data {
-    /**
-     * 地点 ID
-     */
-    id?: string;
-
-    /**
-     * 完整地址
-     */
-    address?: string;
-
-    /**
-     * 城市
-     */
-    city?: string;
-
-    /**
-     * 距离(米)
-     */
-    distance?: number;
-
-    /**
-     * 区县
-     */
-    district?: string;
-
-    /**
-     * 纬度
-     */
-    latitude?: number;
-
-    /**
-     * 经度
-     */
-    longitude?: number;
-
-    /**
-     * 地点名称
-     */
-    name?: string;
-  }
 }
 
 export interface LocationListNearbyParams {
@@ -121,6 +119,7 @@ export interface LocationSearchParams {
 
 export declare namespace Locations {
   export {
+    type LocationResponse as LocationResponse,
     type ResultListLocations as ResultListLocations,
     type LocationListNearbyParams as LocationListNearbyParams,
     type LocationSearchParams as LocationSearchParams,

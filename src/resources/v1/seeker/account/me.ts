@@ -117,79 +117,12 @@ export interface ResultUserInfo {
   /**
    * 用户信息响应
    */
-  data?: ResultUserInfo.Data;
+  data?: UserInfoResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultUserInfo {
-  /**
-   * 用户信息响应
-   */
-  export interface Data {
-    /**
-     * 用户 ID
-     */
-    id?: string;
-
-    /**
-     * 头像 URL
-     */
-    avatar?: string;
-
-    /**
-     * 企业 ID
-     */
-    companyId?: string;
-
-    /**
-     * 企业 LOGO
-     */
-    companyLogo?: string;
-
-    /**
-     * 企业名称
-     */
-    companyName?: string;
-
-    /**
-     * 创建时间
-     */
-    createdAt?: string;
-
-    /**
-     * 是否已认证
-     */
-    isVerified?: boolean;
-
-    /**
-     * 姓名
-     */
-    name?: string;
-
-    /**
-     * 手机号
-     */
-    phone?: string;
-
-    /**
-     * 角色: admin/hr/interviewer/talent
-     */
-    role?: string;
-
-    /**
-     * 状态: active/disabled
-     */
-    status?: string;
-
-    /**
-     * 职位头衔
-     */
-    title?: string;
-  }
 }
 
 /**
@@ -220,6 +153,71 @@ export interface UpdateUserRequest {
    * 头像 URL
    */
   avatar?: string;
+
+  /**
+   * 职位头衔
+   */
+  title?: string;
+}
+
+/**
+ * 用户信息响应
+ */
+export interface UserInfoResponse {
+  /**
+   * 用户 ID
+   */
+  id?: string;
+
+  /**
+   * 头像 URL
+   */
+  avatar?: string;
+
+  /**
+   * 企业 ID
+   */
+  companyId?: string;
+
+  /**
+   * 企业 LOGO
+   */
+  companyLogo?: string;
+
+  /**
+   * 企业名称
+   */
+  companyName?: string;
+
+  /**
+   * 创建时间
+   */
+  createdAt?: string;
+
+  /**
+   * 是否已认证
+   */
+  isVerified?: boolean;
+
+  /**
+   * 姓名
+   */
+  name?: string;
+
+  /**
+   * 手机号
+   */
+  phone?: string;
+
+  /**
+   * 角色: admin/hr/interviewer/talent
+   */
+  role?: string;
+
+  /**
+   * 状态: active/disabled
+   */
+  status?: string;
 
   /**
    * 职位头衔
@@ -286,6 +284,7 @@ export declare namespace Me {
     type ResultUserInfo as ResultUserInfo,
     type UpdatePasswordRequest as UpdatePasswordRequest,
     type UpdateUserRequest as UpdateUserRequest,
+    type UserInfoResponse as UserInfoResponse,
     type MeCreateParams as MeCreateParams,
     type MeAvatarParams as MeAvatarParams,
     type MePatchAllParams as MePatchAllParams,

@@ -7,6 +7,7 @@ export {
 } from './ai-assistant';
 export {
   Messages,
+  type PageResultMapStringObject,
   type ResultPageResultMapStringObject,
   type MessageCreateParams,
   type MessageListParams,

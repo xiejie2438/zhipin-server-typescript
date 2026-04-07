@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../../core/resource';
-import * as LoginAPI from './login';
-import { Login, LoginCreateParams, LoginSMSParams } from './login';
+import * as SeekerLoginAPI from './seeker-login';
+import { SeekerLogin, SeekerLoginCreateParams, SeekerLoginSMSParams } from './seeker-login';
 import * as SMSAPI from './sms';
 import { LoginRequest, SMS, SMSCodeRequest, SMSLoginParams, SMSSendParams } from './sms';
 import * as TokenAPI from './token';
-import { RefreshTokenRequest, ResultLogin, Token, TokenRefreshParams } from './token';
+import { LoginResponse, RefreshTokenRequest, ResultLogin, Token, TokenRefreshParams } from './token';
 import * as WorkExperienceAPI from '../profile/work-experience';
 import { APIPromise } from '../../../../core/api-promise';
 import { RequestOptions } from '../../../../internal/request-options';
@@ -14,7 +14,7 @@ import { RequestOptions } from '../../../../internal/request-options';
 export class Auth extends APIResource {
   token: TokenAPI.Token = new TokenAPI.Token(this._client);
   sms: SMSAPI.SMS = new SMSAPI.SMS(this._client);
-  login: LoginAPI.Login = new LoginAPI.Login(this._client);
+  seekerLogin: SeekerLoginAPI.SeekerLogin = new SeekerLoginAPI.SeekerLogin(this._client);
 
   /**
    * 用户退出登录
@@ -116,7 +116,7 @@ export interface AuthRegisterParams {
 
 Auth.Token = Token;
 Auth.SMS = SMS;
-Auth.Login = Login;
+Auth.SeekerLogin = SeekerLogin;
 
 export declare namespace Auth {
   export {
@@ -127,6 +127,7 @@ export declare namespace Auth {
 
   export {
     Token as Token,
+    type LoginResponse as LoginResponse,
     type RefreshTokenRequest as RefreshTokenRequest,
     type ResultLogin as ResultLogin,
     type TokenRefreshParams as TokenRefreshParams,
@@ -141,8 +142,8 @@ export declare namespace Auth {
   };
 
   export {
-    Login as Login,
-    type LoginCreateParams as LoginCreateParams,
-    type LoginSMSParams as LoginSMSParams,
+    SeekerLogin as SeekerLogin,
+    type SeekerLoginCreateParams as SeekerLoginCreateParams,
+    type SeekerLoginSMSParams as SeekerLoginSMSParams,
   };
 }

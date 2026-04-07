@@ -23,6 +23,31 @@ export class Token extends APIResource {
 }
 
 /**
+ * 登录响应
+ */
+export interface LoginResponse {
+  /**
+   * 访问令牌
+   */
+  accessToken?: string;
+
+  /**
+   * 访问令牌过期时间(秒)
+   */
+  expiresIn?: number;
+
+  /**
+   * 刷新令牌
+   */
+  refreshToken?: string;
+
+  /**
+   * 用户信息
+   */
+  user?: SchedulesAPI.UserInfo;
+}
+
+/**
  * 刷新 Token 请求参数
  */
 export interface RefreshTokenRequest {
@@ -44,39 +69,12 @@ export interface ResultLogin {
   /**
    * 登录响应
    */
-  data?: ResultLogin.Data;
+  data?: LoginResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultLogin {
-  /**
-   * 登录响应
-   */
-  export interface Data {
-    /**
-     * 访问令牌
-     */
-    accessToken?: string;
-
-    /**
-     * 访问令牌过期时间(秒)
-     */
-    expiresIn?: number;
-
-    /**
-     * 刷新令牌
-     */
-    refreshToken?: string;
-
-    /**
-     * 用户信息
-     */
-    user?: SchedulesAPI.UserInfo;
-  }
 }
 
 export interface TokenRefreshParams {
@@ -88,6 +86,7 @@ export interface TokenRefreshParams {
 
 export declare namespace Token {
   export {
+    type LoginResponse as LoginResponse,
     type RefreshTokenRequest as RefreshTokenRequest,
     type ResultLogin as ResultLogin,
     type TokenRefreshParams as TokenRefreshParams,

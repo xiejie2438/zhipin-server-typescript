@@ -162,6 +162,7 @@ Types:
 - <code><a href="./src/resources/v1/seeker/account/me.ts">ResultUserInfo</a></code>
 - <code><a href="./src/resources/v1/seeker/account/me.ts">UpdatePasswordRequest</a></code>
 - <code><a href="./src/resources/v1/seeker/account/me.ts">UpdateUserRequest</a></code>
+- <code><a href="./src/resources/v1/seeker/account/me.ts">UserInfoResponse</a></code>
 
 Methods:
 
@@ -175,6 +176,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/seeker/notifications.ts">NotificationStatsResponse</a></code>
 - <code><a href="./src/resources/v1/seeker/notifications.ts">ResultNotificationStats</a></code>
 - <code><a href="./src/resources/v1/seeker/notifications.ts">ResultPageResultNotification</a></code>
 
@@ -191,6 +193,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/v1/seeker/files.ts">ResultUpload</a></code>
+- <code><a href="./src/resources/v1/seeker/files.ts">UploadResponse</a></code>
 
 Methods:
 
@@ -213,6 +216,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/seeker/auth/token.ts">LoginResponse</a></code>
 - <code><a href="./src/resources/v1/seeker/auth/token.ts">RefreshTokenRequest</a></code>
 - <code><a href="./src/resources/v1/seeker/auth/token.ts">ResultLogin</a></code>
 
@@ -232,12 +236,12 @@ Methods:
 - <code title="post /api/v1/seeker/auth/sms/login">client.v1.seeker.auth.sms.<a href="./src/resources/v1/seeker/auth/sms.ts">login</a>({ ...params }) -> ResultLogin</code>
 - <code title="post /api/v1/seeker/auth/sms/send">client.v1.seeker.auth.sms.<a href="./src/resources/v1/seeker/auth/sms.ts">send</a>({ ...params }) -> ResultMapStringObject</code>
 
-#### Login
+#### SeekerLogin
 
 Methods:
 
-- <code title="post /api/v1/seeker/auth/login">client.v1.seeker.auth.login.<a href="./src/resources/v1/seeker/auth/login.ts">create</a>({ ...params }) -> ResultLogin</code>
-- <code title="post /api/v1/seeker/auth/login/sms">client.v1.seeker.auth.login.<a href="./src/resources/v1/seeker/auth/login.ts">sms</a>({ ...params }) -> ResultLogin</code>
+- <code title="post /api/v1/seeker/auth/login">client.v1.seeker.auth.seekerLogin.<a href="./src/resources/v1/seeker/auth/seeker-login.ts">create</a>({ ...params }) -> ResultLogin</code>
+- <code title="post /api/v1/seeker/auth/login/sms">client.v1.seeker.auth.seekerLogin.<a href="./src/resources/v1/seeker/auth/seeker-login.ts">sms</a>({ ...params }) -> ResultLogin</code>
 
 ### Applications
 
@@ -271,6 +275,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/seeker/ai-assistant/messages.ts">PageResultMapStringObject</a></code>
 - <code><a href="./src/resources/v1/seeker/ai-assistant/messages.ts">ResultPageResultMapStringObject</a></code>
 
 Methods:
@@ -352,10 +357,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/enterprise/schedules.ts">FeedbackInfo</a></code>
+- <code><a href="./src/resources/v1/enterprise/schedules.ts">InterviewerInfo</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">PositionInfo</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">ResultPageScheduleList</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">ResultScheduleDetail</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">ScheduleCancel</a></code>
+- <code><a href="./src/resources/v1/enterprise/schedules.ts">ScheduleDetailResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">TalentInfo</a></code>
 - <code><a href="./src/resources/v1/enterprise/schedules.ts">UserInfo</a></code>
 
@@ -406,7 +414,9 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/enterprise/positions.ts">Creator</a></code>
 - <code><a href="./src/resources/v1/enterprise/positions.ts">PositionCreate</a></code>
+- <code><a href="./src/resources/v1/enterprise/positions.ts">PositionDetailResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/positions.ts">ResultPositionDetail</a></code>
 - <code><a href="./src/resources/v1/enterprise/positions.ts">Statistics</a></code>
 - <code><a href="./src/resources/v1/enterprise/positions.ts">PositionListResponse</a></code>
@@ -449,6 +459,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/enterprise/members.ts">MemberDetailResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/members.ts">MemberList</a></code>
 - <code><a href="./src/resources/v1/enterprise/members.ts">ResultMemberDetail</a></code>
 - <code><a href="./src/resources/v1/enterprise/members.ts">MemberListResponse</a></code>
@@ -475,6 +486,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/enterprise/companies/current.ts">CompanyInfoResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/companies/current.ts">ResultCompanyInfo</a></code>
 
 Methods:
@@ -538,7 +550,9 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/enterprise/talents/talents.ts">PageResultTalentListResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/talents/talents.ts">ResultPageTalentList</a></code>
+- <code><a href="./src/resources/v1/enterprise/talents/talents.ts">TalentListResponse</a></code>
 - <code><a href="./src/resources/v1/enterprise/talents/talents.ts">TalentRetrieveResponse</a></code>
 
 Methods:
@@ -576,6 +590,7 @@ Methods:
 
 Methods:
 
+- <code title="post /api/v1/enterprise/auth/login">client.v1.enterprise.auth.<a href="./src/resources/v1/enterprise/auth/auth.ts">enterpriseLogin</a>({ ...params }) -> ResultLogin</code>
 - <code title="post /api/v1/enterprise/auth/logout">client.v1.enterprise.auth.<a href="./src/resources/v1/enterprise/auth/auth.ts">logout</a>() -> ResultVoid</code>
 - <code title="post /api/v1/enterprise/auth/refresh">client.v1.enterprise.auth.<a href="./src/resources/v1/enterprise/auth/auth.ts">refresh</a>({ ...params }) -> ResultLogin</code>
 - <code title="post /api/v1/enterprise/auth/register">client.v1.enterprise.auth.<a href="./src/resources/v1/enterprise/auth/auth.ts">register</a>({ ...params }) -> ResultLogin</code>
@@ -783,7 +798,7 @@ Methods:
 
 Methods:
 
-- <code title="post /api/admin/auth/login">client.admin.auth.<a href="./src/resources/admin/auth.ts">login</a>({ ...params }) -> ResultMapStringObject</code>
+- <code title="post /api/admin/auth/login">client.admin.auth.<a href="./src/resources/admin/auth.ts">adminLogin</a>({ ...params }) -> ResultMapStringObject</code>
 - <code title="post /api/admin/auth/logout">client.admin.auth.<a href="./src/resources/admin/auth.ts">logout</a>() -> ResultVoid</code>
 - <code title="get /api/admin/auth/profile">client.admin.auth.<a href="./src/resources/admin/auth.ts">retrieveProfile</a>() -> ResultMapStringObject</code>
 - <code title="put /api/admin/auth/password">client.admin.auth.<a href="./src/resources/admin/auth.ts">updatePassword</a>({ ...params }) -> ResultVoid</code>
@@ -951,6 +966,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/admin/locations.ts">LocationResponse</a></code>
 - <code><a href="./src/resources/admin/locations.ts">ResultListLocations</a></code>
 
 Methods:

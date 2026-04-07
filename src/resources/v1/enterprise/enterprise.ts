@@ -7,6 +7,7 @@ import * as MembersAPI from './members';
 import {
   MemberAddParams,
   MemberAddResponse,
+  MemberDetailResponse,
   MemberDisableParams,
   MemberList,
   MemberListParams,
@@ -19,8 +20,10 @@ import * as NotificationsAPI from './notifications';
 import { NotificationListParams, Notifications } from './notifications';
 import * as PositionsAPI from './positions';
 import {
+  Creator,
   PositionCreate,
   PositionCreateParams,
+  PositionDetailResponse,
   PositionListParams,
   PositionListResponse,
   PositionUpdateParams,
@@ -53,6 +56,8 @@ import {
 } from './resumes';
 import * as SchedulesAPI from './schedules';
 import {
+  FeedbackInfo,
+  InterviewerInfo,
   PositionInfo,
   ResultPageScheduleList,
   ResultScheduleDetail,
@@ -60,6 +65,7 @@ import {
   ScheduleCancelParams,
   ScheduleCreateParams,
   ScheduleDeleteParams,
+  ScheduleDetailResponse,
   ScheduleListParams,
   ScheduleSubmitFeedbackParams,
   ScheduleUpdateParams,
@@ -78,7 +84,7 @@ import {
   ResultString,
 } from './ai-assistant/ai-assistant';
 import * as AuthAPI from './auth/auth';
-import { Auth, AuthRefreshParams, AuthRegisterParams } from './auth/auth';
+import { Auth, AuthEnterpriseLoginParams, AuthRefreshParams, AuthRegisterParams } from './auth/auth';
 import * as CompaniesAPI from './companies/companies';
 import {
   Companies,
@@ -89,10 +95,12 @@ import * as MessageAPI from './message/message';
 import { Message } from './message/message';
 import * as TalentsAPI from './talents/talents';
 import {
+  PageResultTalentListResponse,
   ResultPageTalentList,
   TalentInviteParams,
   TalentListFavoritesParams,
   TalentListParams,
+  TalentListResponse,
   TalentRetrieveResponse,
   Talents,
 } from './talents/talents';
@@ -189,10 +197,13 @@ export declare namespace Enterprise {
 
   export {
     Schedules as Schedules,
+    type FeedbackInfo as FeedbackInfo,
+    type InterviewerInfo as InterviewerInfo,
     type PositionInfo as PositionInfo,
     type ResultPageScheduleList as ResultPageScheduleList,
     type ResultScheduleDetail as ResultScheduleDetail,
     type ScheduleCancel as ScheduleCancel,
+    type ScheduleDetailResponse as ScheduleDetailResponse,
     type TalentInfo as TalentInfo,
     type UserInfo as UserInfo,
     type ScheduleCreateParams as ScheduleCreateParams,
@@ -227,7 +238,9 @@ export declare namespace Enterprise {
 
   export {
     Positions as Positions,
+    type Creator as Creator,
     type PositionCreate as PositionCreate,
+    type PositionDetailResponse as PositionDetailResponse,
     type ResultPositionDetail as ResultPositionDetail,
     type Statistics as Statistics,
     type PositionListResponse as PositionListResponse,
@@ -241,6 +254,7 @@ export declare namespace Enterprise {
 
   export {
     Members as Members,
+    type MemberDetailResponse as MemberDetailResponse,
     type MemberList as MemberList,
     type ResultMemberDetail as ResultMemberDetail,
     type MemberListResponse as MemberListResponse,
@@ -269,7 +283,9 @@ export declare namespace Enterprise {
 
   export {
     Talents as Talents,
+    type PageResultTalentListResponse as PageResultTalentListResponse,
     type ResultPageTalentList as ResultPageTalentList,
+    type TalentListResponse as TalentListResponse,
     type TalentRetrieveResponse as TalentRetrieveResponse,
     type TalentListParams as TalentListParams,
     type TalentInviteParams as TalentInviteParams,
@@ -286,6 +302,7 @@ export declare namespace Enterprise {
 
   export {
     Auth as Auth,
+    type AuthEnterpriseLoginParams as AuthEnterpriseLoginParams,
     type AuthRefreshParams as AuthRefreshParams,
     type AuthRegisterParams as AuthRegisterParams,
   };

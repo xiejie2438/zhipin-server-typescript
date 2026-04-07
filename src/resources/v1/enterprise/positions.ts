@@ -113,6 +113,21 @@ export class Positions extends APIResource {
 }
 
 /**
+ * 创建人信息
+ */
+export interface Creator {
+  /**
+   * 用户 ID
+   */
+  id?: string;
+
+  /**
+   * 姓名
+   */
+  name?: string;
+}
+
+/**
  * 创建职位请求参数
  */
 export interface PositionCreate {
@@ -218,6 +233,141 @@ export interface PositionCreate {
 }
 
 /**
+ * 职位详情响应
+ */
+export interface PositionDetailResponse {
+  /**
+   * 职位 ID
+   */
+  id?: string;
+
+  /**
+   * 详细工作地址
+   */
+  address?: string;
+
+  /**
+   * 职位福利
+   */
+  benefits?: Array<string>;
+
+  /**
+   * 职位类别
+   */
+  category?: string;
+
+  /**
+   * 工作城市
+   */
+  city?: string;
+
+  /**
+   * 关闭原因
+   */
+  closeReason?: string;
+
+  /**
+   * 创建时间
+   */
+  createdAt?: string;
+
+  /**
+   * 创建人信息
+   */
+  createdBy?: Creator;
+
+  /**
+   * 职位描述
+   */
+  description?: string;
+
+  /**
+   * 工作区县
+   */
+  district?: string;
+
+  /**
+   * 学历要求
+   */
+  education?: string;
+
+  /**
+   * 经验要求
+   */
+  experience?: string;
+
+  /**
+   * 招聘人数
+   */
+  headcount?: number;
+
+  /**
+   * 职位亮点
+   */
+  highlights?: Array<string>;
+
+  /**
+   * 面试流程
+   */
+  interviewProcess?: Array<string>;
+
+  /**
+   * 职位名称
+   */
+  name?: string;
+
+  /**
+   * 任职要求
+   */
+  requirements?: string;
+
+  /**
+   * 最高薪资(K)
+   */
+  salaryMax?: number;
+
+  /**
+   * 最低薪资(K)
+   */
+  salaryMin?: number;
+
+  /**
+   * 薪资范围
+   */
+  salaryRange?: string;
+
+  /**
+   * 技能要求
+   */
+  skills?: Array<string>;
+
+  /**
+   * 职位统计信息
+   */
+  statistics?: Statistics;
+
+  /**
+   * 状态: active/closed
+   */
+  status?: string;
+
+  /**
+   * 职位子类别
+   */
+  subCategory?: string;
+
+  /**
+   * 更新时间
+   */
+  updatedAt?: string;
+
+  /**
+   * 是否急聘
+   */
+  urgency?: boolean;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultPositionDetail {
@@ -229,166 +379,12 @@ export interface ResultPositionDetail {
   /**
    * 职位详情响应
    */
-  data?: ResultPositionDetail.Data;
+  data?: PositionDetailResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultPositionDetail {
-  /**
-   * 职位详情响应
-   */
-  export interface Data {
-    /**
-     * 职位 ID
-     */
-    id?: string;
-
-    /**
-     * 详细工作地址
-     */
-    address?: string;
-
-    /**
-     * 职位福利
-     */
-    benefits?: Array<string>;
-
-    /**
-     * 职位类别
-     */
-    category?: string;
-
-    /**
-     * 工作城市
-     */
-    city?: string;
-
-    /**
-     * 关闭原因
-     */
-    closeReason?: string;
-
-    /**
-     * 创建时间
-     */
-    createdAt?: string;
-
-    /**
-     * 创建人信息
-     */
-    createdBy?: Data.CreatedBy;
-
-    /**
-     * 职位描述
-     */
-    description?: string;
-
-    /**
-     * 工作区县
-     */
-    district?: string;
-
-    /**
-     * 学历要求
-     */
-    education?: string;
-
-    /**
-     * 经验要求
-     */
-    experience?: string;
-
-    /**
-     * 招聘人数
-     */
-    headcount?: number;
-
-    /**
-     * 职位亮点
-     */
-    highlights?: Array<string>;
-
-    /**
-     * 面试流程
-     */
-    interviewProcess?: Array<string>;
-
-    /**
-     * 职位名称
-     */
-    name?: string;
-
-    /**
-     * 任职要求
-     */
-    requirements?: string;
-
-    /**
-     * 最高薪资(K)
-     */
-    salaryMax?: number;
-
-    /**
-     * 最低薪资(K)
-     */
-    salaryMin?: number;
-
-    /**
-     * 薪资范围
-     */
-    salaryRange?: string;
-
-    /**
-     * 技能要求
-     */
-    skills?: Array<string>;
-
-    /**
-     * 职位统计信息
-     */
-    statistics?: PositionsAPI.Statistics;
-
-    /**
-     * 状态: active/closed
-     */
-    status?: string;
-
-    /**
-     * 职位子类别
-     */
-    subCategory?: string;
-
-    /**
-     * 更新时间
-     */
-    updatedAt?: string;
-
-    /**
-     * 是否急聘
-     */
-    urgency?: boolean;
-  }
-
-  export namespace Data {
-    /**
-     * 创建人信息
-     */
-    export interface CreatedBy {
-      /**
-       * 用户 ID
-       */
-      id?: string;
-
-      /**
-       * 姓名
-       */
-      name?: string;
-    }
-  }
 }
 
 /**
@@ -769,7 +765,9 @@ export interface PositionUpdateStatusParams {
 
 export declare namespace Positions {
   export {
+    type Creator as Creator,
     type PositionCreate as PositionCreate,
+    type PositionDetailResponse as PositionDetailResponse,
     type ResultPositionDetail as ResultPositionDetail,
     type Statistics as Statistics,
     type PositionListResponse as PositionListResponse,

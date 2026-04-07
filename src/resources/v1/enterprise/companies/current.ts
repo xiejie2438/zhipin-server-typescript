@@ -72,6 +72,136 @@ export class Current extends APIResource {
 }
 
 /**
+ * 企业信息响应
+ */
+export interface CompanyInfoResponse {
+  /**
+   * 企业 ID
+   */
+  id?: string;
+
+  /**
+   * 详细地址
+   */
+  address?: string;
+
+  /**
+   * 管理员 ID
+   */
+  adminId?: string;
+
+  /**
+   * 管理员姓名
+   */
+  adminName?: string;
+
+  /**
+   * 营业执照图片 URL
+   */
+  businessLicense?: string;
+
+  /**
+   * 城市
+   */
+  city?: string;
+
+  /**
+   * 创建时间
+   */
+  createdAt?: string;
+
+  /**
+   * 企业文化
+   */
+  culture?: string;
+
+  /**
+   * 企业简介
+   */
+  description?: string;
+
+  /**
+   * 区县
+   */
+  district?: string;
+
+  /**
+   * 所属行业
+   */
+  industry?: string;
+
+  /**
+   * 是否已认证
+   */
+  isVerified?: boolean;
+
+  /**
+   * 纬度
+   */
+  latitude?: string;
+
+  /**
+   * 企业 LOGO
+   */
+  logo?: string;
+
+  /**
+   * 经度
+   */
+  longitude?: string;
+
+  /**
+   * 企业全称
+   */
+  name?: string;
+
+  /**
+   * 企业性质
+   */
+  nature?: string;
+
+  /**
+   * 省份
+   */
+  province?: string;
+
+  /**
+   * 企业简称
+   */
+  shortName?: string;
+
+  /**
+   * 企业规模
+   */
+  size?: string;
+
+  /**
+   * 统一社会信用代码
+   */
+  unifiedCreditCode?: string;
+
+  /**
+   * 认证通过时间
+   */
+  verifiedAt?: string;
+
+  /**
+   * 认证失败原因
+   */
+  verifyRejectReason?: string;
+
+  /**
+   * 认证状态:0 待认证 1 已认证 2 认证失败
+   */
+  verifyStatus?: number;
+
+  /**
+   * 企业福利
+   */
+  welfare?: string;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultCompanyInfo {
@@ -83,144 +213,12 @@ export interface ResultCompanyInfo {
   /**
    * 企业信息响应
    */
-  data?: ResultCompanyInfo.Data;
+  data?: CompanyInfoResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultCompanyInfo {
-  /**
-   * 企业信息响应
-   */
-  export interface Data {
-    /**
-     * 企业 ID
-     */
-    id?: string;
-
-    /**
-     * 详细地址
-     */
-    address?: string;
-
-    /**
-     * 管理员 ID
-     */
-    adminId?: string;
-
-    /**
-     * 管理员姓名
-     */
-    adminName?: string;
-
-    /**
-     * 营业执照图片 URL
-     */
-    businessLicense?: string;
-
-    /**
-     * 城市
-     */
-    city?: string;
-
-    /**
-     * 创建时间
-     */
-    createdAt?: string;
-
-    /**
-     * 企业文化
-     */
-    culture?: string;
-
-    /**
-     * 企业简介
-     */
-    description?: string;
-
-    /**
-     * 区县
-     */
-    district?: string;
-
-    /**
-     * 所属行业
-     */
-    industry?: string;
-
-    /**
-     * 是否已认证
-     */
-    isVerified?: boolean;
-
-    /**
-     * 纬度
-     */
-    latitude?: string;
-
-    /**
-     * 企业 LOGO
-     */
-    logo?: string;
-
-    /**
-     * 经度
-     */
-    longitude?: string;
-
-    /**
-     * 企业全称
-     */
-    name?: string;
-
-    /**
-     * 企业性质
-     */
-    nature?: string;
-
-    /**
-     * 省份
-     */
-    province?: string;
-
-    /**
-     * 企业简称
-     */
-    shortName?: string;
-
-    /**
-     * 企业规模
-     */
-    size?: string;
-
-    /**
-     * 统一社会信用代码
-     */
-    unifiedCreditCode?: string;
-
-    /**
-     * 认证通过时间
-     */
-    verifiedAt?: string;
-
-    /**
-     * 认证失败原因
-     */
-    verifyRejectReason?: string;
-
-    /**
-     * 认证状态:0 待认证 1 已认证 2 认证失败
-     */
-    verifyStatus?: number;
-
-    /**
-     * 企业福利
-     */
-    welfare?: string;
-  }
 }
 
 export interface CurrentUpdateParams {
@@ -301,6 +299,7 @@ export interface CurrentUploadLogoParams {
 
 export declare namespace Current {
   export {
+    type CompanyInfoResponse as CompanyInfoResponse,
     type ResultCompanyInfo as ResultCompanyInfo,
     type CurrentUpdateParams as CurrentUpdateParams,
     type CurrentUploadBusinessLicenseParams as CurrentUploadBusinessLicenseParams,

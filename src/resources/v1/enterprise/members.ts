@@ -119,6 +119,71 @@ export class Members extends APIResource {
 }
 
 /**
+ * 成员详情响应
+ */
+export interface MemberDetailResponse {
+  /**
+   * 成员 ID
+   */
+  id?: string;
+
+  /**
+   * 头像 URL
+   */
+  avatar?: string;
+
+  /**
+   * 创建时间
+   */
+  createdAt?: string;
+
+  /**
+   * 部门
+   */
+  department?: string;
+
+  /**
+   * 最后活跃时间
+   */
+  lastActiveAt?: string;
+
+  /**
+   * 姓名
+   */
+  name?: string;
+
+  /**
+   * 权限列表
+   */
+  permissions?: Array<string>;
+
+  /**
+   * 手机号
+   */
+  phone?: string;
+
+  /**
+   * 角色: admin/hr/interviewer
+   */
+  role?: string;
+
+  /**
+   * 职位统计信息
+   */
+  statistics?: PositionsAPI.Statistics;
+
+  /**
+   * 状态: active/disabled
+   */
+  status?: string;
+
+  /**
+   * 职位头衔
+   */
+  title?: string;
+}
+
+/**
  * 成员列表项响应
  */
 export interface MemberList {
@@ -180,79 +245,12 @@ export interface ResultMemberDetail {
   /**
    * 成员详情响应
    */
-  data?: ResultMemberDetail.Data;
+  data?: MemberDetailResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultMemberDetail {
-  /**
-   * 成员详情响应
-   */
-  export interface Data {
-    /**
-     * 成员 ID
-     */
-    id?: string;
-
-    /**
-     * 头像 URL
-     */
-    avatar?: string;
-
-    /**
-     * 创建时间
-     */
-    createdAt?: string;
-
-    /**
-     * 部门
-     */
-    department?: string;
-
-    /**
-     * 最后活跃时间
-     */
-    lastActiveAt?: string;
-
-    /**
-     * 姓名
-     */
-    name?: string;
-
-    /**
-     * 权限列表
-     */
-    permissions?: Array<string>;
-
-    /**
-     * 手机号
-     */
-    phone?: string;
-
-    /**
-     * 角色: admin/hr/interviewer
-     */
-    role?: string;
-
-    /**
-     * 职位统计信息
-     */
-    statistics?: PositionsAPI.Statistics;
-
-    /**
-     * 状态: active/disabled
-     */
-    status?: string;
-
-    /**
-     * 职位头衔
-     */
-    title?: string;
-  }
 }
 
 /**
@@ -424,6 +422,7 @@ export interface MemberDisableParams {
 
 export declare namespace Members {
   export {
+    type MemberDetailResponse as MemberDetailResponse,
     type MemberList as MemberList,
     type ResultMemberDetail as ResultMemberDetail,
     type MemberListResponse as MemberListResponse,

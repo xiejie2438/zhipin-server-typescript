@@ -10,8 +10,8 @@ export class Auth extends APIResource {
   /**
    * 管理后台登录
    */
-  login(
-    params: AuthLoginParams,
+  adminLogin(
+    params: AuthAdminLoginParams,
     options?: RequestOptions,
   ): APIPromise<AssistantSettingsAPI.ResultMapStringObject> {
     const { body } = params;
@@ -44,7 +44,7 @@ export class Auth extends APIResource {
   }
 }
 
-export interface AuthLoginParams {
+export interface AuthAdminLoginParams {
   body: { [key: string]: unknown };
 }
 
@@ -54,7 +54,7 @@ export interface AuthUpdatePasswordParams {
 
 export declare namespace Auth {
   export {
-    type AuthLoginParams as AuthLoginParams,
+    type AuthAdminLoginParams as AuthAdminLoginParams,
     type AuthUpdatePasswordParams as AuthUpdatePasswordParams,
   };
 }

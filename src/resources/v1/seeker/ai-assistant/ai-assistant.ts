@@ -6,6 +6,7 @@ import {
   MessageCreateParams,
   MessageListParams,
   Messages,
+  PageResultMapStringObject,
   ResultPageResultMapStringObject,
 } from './messages';
 import * as AssistantSettingsAPI from '../preferences/assistant-settings';
@@ -92,6 +93,7 @@ export declare namespace AIAssistant {
 
   export {
     Messages as Messages,
+    type PageResultMapStringObject as PageResultMapStringObject,
     type ResultPageResultMapStringObject as ResultPageResultMapStringObject,
     type MessageCreateParams as MessageCreateParams,
     type MessageListParams as MessageListParams,

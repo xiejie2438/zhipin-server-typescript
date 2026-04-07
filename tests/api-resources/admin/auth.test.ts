@@ -9,8 +9,8 @@ const client = new ZhipinServer({
 
 describe('resource auth', () => {
   // Mock server tests are disabled
-  test.skip('login: only required params', async () => {
-    const responsePromise = client.admin.auth.login({ body: { foo: {} } });
+  test.skip('adminLogin: only required params', async () => {
+    const responsePromise = client.admin.auth.adminLogin({ body: { foo: {} } });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,8 +21,8 @@ describe('resource auth', () => {
   });
 
   // Mock server tests are disabled
-  test.skip('login: required and optional params', async () => {
-    const response = await client.admin.auth.login({ body: { foo: {} } });
+  test.skip('adminLogin: required and optional params', async () => {
+    const response = await client.admin.auth.adminLogin({ body: { foo: {} } });
   });
 
   // Mock server tests are disabled

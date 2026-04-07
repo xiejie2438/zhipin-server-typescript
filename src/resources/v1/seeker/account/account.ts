@@ -12,6 +12,7 @@ import {
   ResultUserInfo,
   UpdatePasswordRequest,
   UpdateUserRequest,
+  UserInfoResponse,
 } from './me';
 
 export class Account extends APIResource {
@@ -27,6 +28,7 @@ export declare namespace Account {
     type ResultUserInfo as ResultUserInfo,
     type UpdatePasswordRequest as UpdatePasswordRequest,
     type UpdateUserRequest as UpdateUserRequest,
+    type UserInfoResponse as UserInfoResponse,
     type MeCreateParams as MeCreateParams,
     type MeAvatarParams as MeAvatarParams,
     type MePatchAllParams as MePatchAllParams,

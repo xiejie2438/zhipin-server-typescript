@@ -18,7 +18,13 @@ export {
   type ApplicationUpdateMarkUnsuitableParams,
 } from './applications';
 export { Auth, type RegisterRequest, type AuthRefreshParams, type AuthRegisterParams } from './auth/index';
-export { Files, type ResultUpload, type FileFileParams, type FileImageParams } from './files';
+export {
+  Files,
+  type ResultUpload,
+  type UploadResponse,
+  type FileFileParams,
+  type FileImageParams,
+} from './files';
 export {
   Jobs,
   type CompanyInfo,
@@ -36,6 +42,7 @@ export { Lookups } from './lookups/index';
 export { Message } from './message/index';
 export {
   Notifications,
+  type NotificationStatsResponse,
   type ResultNotificationStats,
   type ResultPageResultNotification,
   type NotificationListParams,

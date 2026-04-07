@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as AuthAPI from './auth';
-import { Auth, AuthLoginParams, AuthUpdatePasswordParams } from './auth';
+import { Auth, AuthAdminLoginParams, AuthUpdatePasswordParams } from './auth';
 import * as FeedbacksAPI from './feedbacks';
 import {
   FeedbackGetStatisticsParams,
@@ -16,7 +16,13 @@ import { FileUploadFileParams, FileUploadImageParams, Files } from './files';
 import * as JobseekersAPI from './jobseekers';
 import { JobseekerListParams, Jobseekers } from './jobseekers';
 import * as LocationsAPI from './locations';
-import { LocationListNearbyParams, LocationSearchParams, Locations, ResultListLocations } from './locations';
+import {
+  LocationListNearbyParams,
+  LocationResponse,
+  LocationSearchParams,
+  Locations,
+  ResultListLocations,
+} from './locations';
 import * as LogsAPI from './logs';
 import { LogExportParams, LogListParams, Logs } from './logs';
 import * as NotificationsAPI from './notifications';
@@ -116,7 +122,7 @@ export declare namespace Admin {
 
   export {
     Auth as Auth,
-    type AuthLoginParams as AuthLoginParams,
+    type AuthAdminLoginParams as AuthAdminLoginParams,
     type AuthUpdatePasswordParams as AuthUpdatePasswordParams,
   };
 
@@ -154,6 +160,7 @@ export declare namespace Admin {
 
   export {
     Locations as Locations,
+    type LocationResponse as LocationResponse,
     type ResultListLocations as ResultListLocations,
     type LocationListNearbyParams as LocationListNearbyParams,
     type LocationSearchParams as LocationSearchParams,

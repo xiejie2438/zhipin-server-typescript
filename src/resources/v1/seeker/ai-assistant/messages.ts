@@ -46,6 +46,21 @@ export class Messages extends APIResource {
 }
 
 /**
+ * 分页响应包装类
+ */
+export interface PageResultMapStringObject {
+  /**
+   * 数据列表
+   */
+  list?: Array<{ [key: string]: unknown }>;
+
+  /**
+   * 分页信息
+   */
+  pagination?: ConversationsMessagesAPI.Pagination;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultPageResultMapStringObject {
@@ -57,29 +72,12 @@ export interface ResultPageResultMapStringObject {
   /**
    * 分页响应包装类
    */
-  data?: ResultPageResultMapStringObject.Data;
+  data?: PageResultMapStringObject;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultPageResultMapStringObject {
-  /**
-   * 分页响应包装类
-   */
-  export interface Data {
-    /**
-     * 数据列表
-     */
-    list?: Array<{ [key: string]: unknown }>;
-
-    /**
-     * 分页信息
-     */
-    pagination?: ConversationsMessagesAPI.Pagination;
-  }
 }
 
 export interface MessageCreateParams {
@@ -103,6 +101,7 @@ export interface MessageListParams {
 
 export declare namespace Messages {
   export {
+    type PageResultMapStringObject as PageResultMapStringObject,
     type ResultPageResultMapStringObject as ResultPageResultMapStringObject,
     type MessageCreateParams as MessageCreateParams,
     type MessageListParams as MessageListParams,

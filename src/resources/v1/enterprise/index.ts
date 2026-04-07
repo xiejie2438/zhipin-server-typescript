@@ -8,7 +8,12 @@ export {
   type AIAssistantSuggestReplyParams,
 } from './ai-assistant/index';
 export { Account } from './account/index';
-export { Auth, type AuthRefreshParams, type AuthRegisterParams } from './auth/index';
+export {
+  Auth,
+  type AuthEnterpriseLoginParams,
+  type AuthRefreshParams,
+  type AuthRegisterParams,
+} from './auth/index';
 export {
   Companies,
   type CompanyRequestAdminTransferParams,
@@ -18,6 +23,7 @@ export { Enterprise, type EnterpriseSubmitFeedbackParams } from './enterprise';
 export { Files, type FileUploadFileParams, type FileUploadImageParams } from './files';
 export {
   Members,
+  type MemberDetailResponse,
   type MemberList,
   type ResultMemberDetail,
   type MemberListResponse,
@@ -31,7 +37,9 @@ export { Message } from './message/index';
 export { Notifications, type NotificationListParams } from './notifications';
 export {
   Positions,
+  type Creator,
   type PositionCreate,
+  type PositionDetailResponse,
   type ResultPositionDetail,
   type Statistics,
   type PositionListResponse,
@@ -62,10 +70,13 @@ export {
 } from './resumes';
 export {
   Schedules,
+  type FeedbackInfo,
+  type InterviewerInfo,
   type PositionInfo,
   type ResultPageScheduleList,
   type ResultScheduleDetail,
   type ScheduleCancel,
+  type ScheduleDetailResponse,
   type TalentInfo,
   type UserInfo,
   type ScheduleCreateParams,
@@ -77,7 +88,9 @@ export {
 } from './schedules';
 export {
   Talents,
+  type PageResultTalentListResponse,
   type ResultPageTalentList,
+  type TalentListResponse,
   type TalentRetrieveResponse,
   type TalentListParams,
   type TalentInviteParams,

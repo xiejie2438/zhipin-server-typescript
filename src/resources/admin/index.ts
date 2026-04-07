@@ -2,7 +2,7 @@
 
 export { Admin } from './admin';
 export { Audit } from './audit/index';
-export { Auth, type AuthLoginParams, type AuthUpdatePasswordParams } from './auth';
+export { Auth, type AuthAdminLoginParams, type AuthUpdatePasswordParams } from './auth';
 export { Config } from './config/index';
 export { Enterprises, type EnterpriseListParams } from './enterprises/index';
 export {
@@ -16,6 +16,7 @@ export { Files, type FileUploadFileParams, type FileUploadImageParams } from './
 export { Jobseekers, type JobseekerListParams } from './jobseekers';
 export {
   Locations,
+  type LocationResponse,
   type ResultListLocations,
   type LocationListNearbyParams,
   type LocationSearchParams,

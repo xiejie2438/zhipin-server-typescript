@@ -79,6 +79,21 @@ export class Talents extends APIResource {
 }
 
 /**
+ * 分页响应包装类
+ */
+export interface PageResultTalentListResponse {
+  /**
+   * 数据列表
+   */
+  list?: Array<TalentListResponse>;
+
+  /**
+   * 分页信息
+   */
+  pagination?: MessagesAPI.Pagination;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultPageTalentList {
@@ -90,7 +105,7 @@ export interface ResultPageTalentList {
   /**
    * 分页响应包装类
    */
-  data?: ResultPageTalentList.Data;
+  data?: PageResultTalentListResponse;
 
   /**
    * 响应消息
@@ -98,113 +113,94 @@ export interface ResultPageTalentList {
   message?: string;
 }
 
-export namespace ResultPageTalentList {
+/**
+ * 人才列表项响应
+ */
+export interface TalentListResponse {
   /**
-   * 分页响应包装类
+   * 人才 ID
    */
-  export interface Data {
-    /**
-     * 数据列表
-     */
-    list?: Array<Data.List>;
+  id?: string;
 
-    /**
-     * 分页信息
-     */
-    pagination?: MessagesAPI.Pagination;
-  }
+  /**
+   * 头像 URL
+   */
+  avatar?: string;
 
-  export namespace Data {
-    /**
-     * 人才列表项响应
-     */
-    export interface List {
-      /**
-       * 人才 ID
-       */
-      id?: string;
+  /**
+   * 当前公司
+   */
+  currentCompany?: string;
 
-      /**
-       * 头像 URL
-       */
-      avatar?: string;
+  /**
+   * 当前职位
+   */
+  currentPosition?: string;
 
-      /**
-       * 当前公司
-       */
-      currentCompany?: string;
+  /**
+   * 学历
+   */
+  education?: string;
 
-      /**
-       * 当前职位
-       */
-      currentPosition?: string;
+  /**
+   * 到岗时间
+   */
+  entryTime?: string;
 
-      /**
-       * 学历
-       */
-      education?: string;
+  /**
+   * 期望薪资
+   */
+  expectedSalary?: string;
 
-      /**
-       * 到岗时间
-       */
-      entryTime?: string;
+  /**
+   * 性别: 0 未知 1 男 2 女
+   */
+  gender?: number;
 
-      /**
-       * 期望薪资
-       */
-      expectedSalary?: string;
+  /**
+   * 是否已收藏
+   */
+  isFavorite?: boolean;
 
-      /**
-       * 性别: 0 未知 1 男 2 女
-       */
-      gender?: number;
+  /**
+   * 求职状态
+   */
+  jobStatus?: string;
 
-      /**
-       * 是否已收藏
-       */
-      isFavorite?: boolean;
+  /**
+   * 最后活跃时间
+   */
+  lastActiveAt?: string;
 
-      /**
-       * 求职状态
-       */
-      jobStatus?: string;
+  /**
+   * 匹配分数
+   */
+  matchScore?: number;
 
-      /**
-       * 最后活跃时间
-       */
-      lastActiveAt?: string;
+  /**
+   * 姓名
+   */
+  name?: string;
 
-      /**
-       * 匹配分数
-       */
-      matchScore?: number;
+  /**
+   * 技能标签
+   */
+  skills?: Array<string>;
 
-      /**
-       * 姓名
-       */
-      name?: string;
+  /**
+   * 期望城市
+   */
+  targetCity?: string;
 
-      /**
-       * 技能标签
-       */
-      skills?: Array<string>;
+  /**
+   * 期望职位
+   */
+  targetPosition?: string;
 
-      /**
-       * 期望城市
-       */
-      targetCity?: string;
-
-      /**
-       * 期望职位
-       */
-      targetPosition?: string;
-
-      /**
-       * 工作年限
-       */
-      workYears?: string;
-    }
-  }
+  /**
+   * 工作年限
+   */
+  workYears?: string;
 }
 
 /**
@@ -550,7 +546,9 @@ Talents.Favorite = Favorite;
 
 export declare namespace Talents {
   export {
+    type PageResultTalentListResponse as PageResultTalentListResponse,
     type ResultPageTalentList as ResultPageTalentList,
+    type TalentListResponse as TalentListResponse,
     type TalentRetrieveResponse as TalentRetrieveResponse,
     type TalentListParams as TalentListParams,
     type TalentInviteParams as TalentInviteParams,

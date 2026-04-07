@@ -5,20 +5,20 @@ import * as TokenAPI from './token';
 import { APIPromise } from '../../../../core/api-promise';
 import { RequestOptions } from '../../../../internal/request-options';
 
-export class Login extends APIResource {
+export class SeekerLogin extends APIResource {
   /**
    * 使用手机号和密码进行登录
    *
    * @example
    * ```ts
    * const resultLogin =
-   *   await client.v1.seeker.auth.login.create({
+   *   await client.v1.seeker.auth.seekerLogin.create({
    *     password: 'password123',
    *     phone: '13800138000',
    *   });
    * ```
    */
-  create(body: LoginCreateParams, options?: RequestOptions): APIPromise<TokenAPI.ResultLogin> {
+  create(body: SeekerLoginCreateParams, options?: RequestOptions): APIPromise<TokenAPI.ResultLogin> {
     return this._client.post('/api/v1/seeker/auth/login', { body, ...options });
   }
 
@@ -27,18 +27,19 @@ export class Login extends APIResource {
    *
    * @example
    * ```ts
-   * const resultLogin = await client.v1.seeker.auth.login.sms({
-   *   password: 'password123',
-   *   phone: '13800138000',
-   * });
+   * const resultLogin =
+   *   await client.v1.seeker.auth.seekerLogin.sms({
+   *     password: 'password123',
+   *     phone: '13800138000',
+   *   });
    * ```
    */
-  sms(body: LoginSMSParams, options?: RequestOptions): APIPromise<TokenAPI.ResultLogin> {
+  sms(body: SeekerLoginSMSParams, options?: RequestOptions): APIPromise<TokenAPI.ResultLogin> {
     return this._client.post('/api/v1/seeker/auth/login/sms', { body, ...options });
   }
 }
 
-export interface LoginCreateParams {
+export interface SeekerLoginCreateParams {
   /**
    * 密码（短信登录时传验证码）
    */
@@ -50,7 +51,7 @@ export interface LoginCreateParams {
   phone: string;
 }
 
-export interface LoginSMSParams {
+export interface SeekerLoginSMSParams {
   /**
    * 密码（短信登录时传验证码）
    */
@@ -62,6 +63,9 @@ export interface LoginSMSParams {
   phone: string;
 }
 
-export declare namespace Login {
-  export { type LoginCreateParams as LoginCreateParams, type LoginSMSParams as LoginSMSParams };
+export declare namespace SeekerLogin {
+  export {
+    type SeekerLoginCreateParams as SeekerLoginCreateParams,
+    type SeekerLoginSMSParams as SeekerLoginSMSParams,
+  };
 }

@@ -3,6 +3,7 @@
 import { APIResource } from '../../../../core/resource';
 import * as CurrentAPI from './current';
 import {
+  CompanyInfoResponse,
   Current,
   CurrentUpdateParams,
   CurrentUploadBusinessLicenseParams,
@@ -93,6 +94,7 @@ export declare namespace Companies {
 
   export {
     Current as Current,
+    type CompanyInfoResponse as CompanyInfoResponse,
     type ResultCompanyInfo as ResultCompanyInfo,
     type CurrentUpdateParams as CurrentUpdateParams,
     type CurrentUploadBusinessLicenseParams as CurrentUploadBusinessLicenseParams,

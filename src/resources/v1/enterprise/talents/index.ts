@@ -3,7 +3,9 @@
 export { Favorite } from './favorite';
 export {
   Talents,
+  type PageResultTalentListResponse,
   type ResultPageTalentList,
+  type TalentListResponse,
   type TalentRetrieveResponse,
   type TalentListParams,
   type TalentInviteParams,

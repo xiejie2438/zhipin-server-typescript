@@ -7,10 +7,10 @@ const client = new ZhipinServer({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource login', () => {
+describe('resource seekerLogin', () => {
   // Mock server tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.v1.seeker.auth.login.create({
+    const responsePromise = client.v1.seeker.auth.seekerLogin.create({
       password: 'password123',
       phone: '13800138000',
     });
@@ -25,7 +25,7 @@ describe('resource login', () => {
 
   // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
-    const response = await client.v1.seeker.auth.login.create({
+    const response = await client.v1.seeker.auth.seekerLogin.create({
       password: 'password123',
       phone: '13800138000',
     });
@@ -33,7 +33,7 @@ describe('resource login', () => {
 
   // Mock server tests are disabled
   test.skip('sms: only required params', async () => {
-    const responsePromise = client.v1.seeker.auth.login.sms({
+    const responsePromise = client.v1.seeker.auth.seekerLogin.sms({
       password: 'password123',
       phone: '13800138000',
     });
@@ -48,6 +48,9 @@ describe('resource login', () => {
 
   // Mock server tests are disabled
   test.skip('sms: required and optional params', async () => {
-    const response = await client.v1.seeker.auth.login.sms({ password: 'password123', phone: '13800138000' });
+    const response = await client.v1.seeker.auth.seekerLogin.sms({
+      password: 'password123',
+      phone: '13800138000',
+    });
   });
 });

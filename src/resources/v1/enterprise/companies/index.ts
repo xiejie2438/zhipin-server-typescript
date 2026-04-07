@@ -7,6 +7,7 @@ export {
 } from './companies';
 export {
   Current,
+  type CompanyInfoResponse,
   type ResultCompanyInfo,
   type CurrentUpdateParams,
   type CurrentUploadBusinessLicenseParams,

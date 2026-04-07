@@ -7,6 +7,7 @@ export {
   type ResultUserInfo,
   type UpdatePasswordRequest,
   type UpdateUserRequest,
+  type UserInfoResponse,
   type MeCreateParams,
   type MeAvatarParams,
   type MePatchAllParams,

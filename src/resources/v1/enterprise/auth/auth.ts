@@ -18,6 +18,25 @@ export class Auth extends APIResource {
   login: LoginAPI.Login = new LoginAPI.Login(this._client);
 
   /**
+   * 使用手机号和密码进行登录
+   *
+   * @example
+   * ```ts
+   * const resultLogin =
+   *   await client.v1.enterprise.auth.enterpriseLogin({
+   *     password: 'password123',
+   *     phone: '13800138000',
+   *   });
+   * ```
+   */
+  enterpriseLogin(
+    body: AuthEnterpriseLoginParams,
+    options?: RequestOptions,
+  ): APIPromise<AuthTokenAPI.ResultLogin> {
+    return this._client.post('/api/v1/enterprise/auth/login', { body, ...options });
+  }
+
+  /**
    * 用户退出登录
    *
    * @example
@@ -64,6 +83,18 @@ export class Auth extends APIResource {
   }
 }
 
+export interface AuthEnterpriseLoginParams {
+  /**
+   * 密码（短信登录时传验证码）
+   */
+  password: string;
+
+  /**
+   * 手机号
+   */
+  phone: string;
+}
+
 export interface AuthRefreshParams {
   /**
    * 刷新令牌
@@ -98,7 +129,11 @@ Auth.SMS = SMS;
 Auth.Login = Login;
 
 export declare namespace Auth {
-  export { type AuthRefreshParams as AuthRefreshParams, type AuthRegisterParams as AuthRegisterParams };
+  export {
+    type AuthEnterpriseLoginParams as AuthEnterpriseLoginParams,
+    type AuthRefreshParams as AuthRefreshParams,
+    type AuthRegisterParams as AuthRegisterParams,
+  };
 
   export { Token as Token, type TokenRefreshParams as TokenRefreshParams };
 

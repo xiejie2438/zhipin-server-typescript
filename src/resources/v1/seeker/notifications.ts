@@ -78,6 +78,36 @@ export class Notifications extends APIResource {
 }
 
 /**
+ * 通知统计响应
+ */
+export interface NotificationStatsResponse {
+  /**
+   * 面试提醒数
+   */
+  interviewRemind?: number;
+
+  /**
+   * 新简历通知数
+   */
+  resumeNew?: number;
+
+  /**
+   * 系统通知数
+   */
+  systemNotice?: number;
+
+  /**
+   * 总通知数
+   */
+  total?: number;
+
+  /**
+   * 未读通知数
+   */
+  unread?: number;
+}
+
+/**
  * 统一响应包装类
  */
 export interface ResultNotificationStats {
@@ -89,44 +119,12 @@ export interface ResultNotificationStats {
   /**
    * 通知统计响应
    */
-  data?: ResultNotificationStats.Data;
+  data?: NotificationStatsResponse;
 
   /**
    * 响应消息
    */
   message?: string;
-}
-
-export namespace ResultNotificationStats {
-  /**
-   * 通知统计响应
-   */
-  export interface Data {
-    /**
-     * 面试提醒数
-     */
-    interviewRemind?: number;
-
-    /**
-     * 新简历通知数
-     */
-    resumeNew?: number;
-
-    /**
-     * 系统通知数
-     */
-    systemNotice?: number;
-
-    /**
-     * 总通知数
-     */
-    total?: number;
-
-    /**
-     * 未读通知数
-     */
-    unread?: number;
-  }
 }
 
 /**
@@ -274,6 +272,7 @@ export interface NotificationListParams {
 
 export declare namespace Notifications {
   export {
+    type NotificationStatsResponse as NotificationStatsResponse,
     type ResultNotificationStats as ResultNotificationStats,
     type ResultPageResultNotification as ResultPageResultNotification,
     type NotificationListParams as NotificationListParams,

@@ -1144,7 +1144,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.seeker.account.me.avatar',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.seeker.account.me.avatar({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.seeker.account.me.avatar({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
       },
     },
   },
@@ -1289,7 +1289,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.seeker.files.image',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.seeker.files.image({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.seeker.files.image({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -1314,7 +1314,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.seeker.files.file',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.seeker.files.file({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.seeker.files.file({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -3458,7 +3458,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.enterprise.companies.current.uploadLogo',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.enterprise.companies.current.uploadLogo({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.enterprise.companies.current.uploadLogo({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
       },
     },
   },
@@ -3482,7 +3482,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.enterprise.companies.current.uploadBusinessLicense',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringObject = await client.v1.enterprise.companies.current.uploadBusinessLicense({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringObject.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringObject = await client.v1.enterprise.companies.current.uploadBusinessLicense({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringObject.code);",
       },
     },
   },
@@ -3854,7 +3854,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.enterprise.account.me.uploadAvatar',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.enterprise.account.me.uploadAvatar({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.v1.enterprise.account.me.uploadAvatar({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
       },
     },
   },
@@ -4148,7 +4148,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.enterprise.files.uploadImage',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.enterprise.files.uploadImage({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.enterprise.files.uploadImage({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -4173,7 +4173,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.v1.enterprise.files.uploadFile',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.enterprise.files.uploadFile({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.v1.enterprise.files.uploadFile({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -5315,7 +5315,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.admin.config.display.banners.upload',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.admin.config.display.banners.upload({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.admin.config.display.banners.upload({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
       },
     },
   },
@@ -5625,7 +5625,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.admin.config.banners.upload',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.admin.config.banners.upload({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringString = await client.admin.config.banners.upload({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringString.code);",
       },
     },
   },
@@ -6007,7 +6007,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.admin.files.uploadImage',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.admin.files.uploadImage({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.admin.files.uploadImage({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -6032,7 +6032,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.admin.files.uploadFile',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.admin.files.uploadFile({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultUpload = await client.admin.files.uploadFile({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultUpload.code);",
       },
     },
   },
@@ -6080,7 +6080,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.admin.feedbacks.uploadAttachment',
         example:
-          "import ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringObject = await client.admin.feedbacks.uploadAttachment({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringObject.code);",
+          "import fs from 'fs';\nimport ZhipinServer from 'zhipin-server';\n\nconst client = new ZhipinServer({\n  apiKey: process.env['ZHIPIN_SERVER_API_KEY'], // This is the default and can be omitted\n});\n\nconst resultMapStringObject = await client.admin.feedbacks.uploadAttachment({\n  file: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(resultMapStringObject.code);",
       },
     },
   },

@@ -1,6 +1,6 @@
 {
   "name": "zhipin-server-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The official MCP Server for the Zhipin Server API",
   "author": "Zhipin Server <tech@zhipin.com>",
   "types": "dist/index.d.ts",

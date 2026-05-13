@@ -1,6 +1,6 @@
 {
   "name": "zhipin-server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The official TypeScript library for the Zhipin Server API",
   "author": "Zhipin Server <tech@zhipin.com>",
   "types": "dist/index.d.ts",
